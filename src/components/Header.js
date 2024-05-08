@@ -54,7 +54,7 @@ const Header = (props) => {
         photo: user.photoURL,
       })
     );
-  };
+  }; 
 
   return (
     <Nav>
@@ -208,7 +208,8 @@ const Login = styled.a`
   border: 1px solid #f9f9f9;
   border-radius: 4px;
   transition: all 0.2s ease 0s;
-
+  cursor: pointer;
+  
   &:hover {
     background-color: #f9f9f9;
     color: #000;
