@@ -19,7 +19,9 @@ const Upcomming = () => {
 
   return (
     <Container>
-      <h4>Upcomming</h4>
+      <UpcommingHeader to="/upcomming">
+        <h4>Upcomming</h4>
+      </UpcommingHeader>
       <Content>
         {movieList.map((movie) => (
           <Wrap key={movie.id}>
@@ -43,6 +45,13 @@ const Upcomming = () => {
 
 const Container = styled.div`
   padding: 0 0 26px;
+`;
+
+const UpcommingHeader = styled(Link)`
+  h4 {
+    cursor: pointer;
+   
+  }
 `;
 
 const Content = styled.div`

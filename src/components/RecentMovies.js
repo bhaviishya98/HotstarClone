@@ -10,7 +10,7 @@ const NowPlaying = () => {
       "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=9c9507db04f409d6558ccc85828c568d"
     )
       .then((res) => res.json())
-      .then((json) => setMovieList(json.results.slice(0, 4)));
+      .then((json) => setMovieList(json.results));
   };
 
   useEffect(() => {
@@ -22,6 +22,7 @@ const NowPlaying = () => {
       <RecentHeader to="/recents">
         <h4>Now Playing</h4>
       </RecentHeader>
+      
       <Content>
         {movieList.map((movie) => (
           <Wrap key={movie.id}>
@@ -44,13 +45,14 @@ const NowPlaying = () => {
 };
 
 const Container = styled.div`
-  padding: 0 0 26px;
+  padding: 0 2rem 26px;
+  margin-top: 7rem;
 `;
 
 const RecentHeader = styled(Link)`
   h4 {
     cursor: pointer;
-   
+    font-size: 2rem;
   }
 `;
 

@@ -19,7 +19,9 @@ const Trending = () => {
 
   return (
     <Container>
-      <h4>Trending</h4>
+      <TrendingHeader to="/trending">
+        <h4>Trending</h4>
+      </TrendingHeader>
       <Content>
         {movieList.map((movie) => (
           <Wrap key={movie.id}>
@@ -43,6 +45,13 @@ const Trending = () => {
 
 const Container = styled.div`
   padding: 0 0 26px;
+  
+`;
+
+const TrendingHeader = styled(Link)`
+  h4 {
+    cursor: pointer;
+  }
 `;
 
 const Content = styled.div`

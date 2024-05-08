@@ -19,7 +19,9 @@ const Recommends = () => {
 
   return (
     <Container>
-      <h4>Recommended for You</h4>
+      <RecommendedHeader to="/recommended">
+        <h4>Recommended for You</h4>
+      </RecommendedHeader>
       <Content>
         {movieList.map((movie) => (
           <Wrap key={movie.id}>
@@ -44,6 +46,13 @@ const Recommends = () => {
 const Container = styled.div`
   padding: 0 0 26px;
 `;
+
+const RecommendedHeader = styled(Link)`
+  h4 {
+    cursor: pointer;
+  }
+`;
+
 
 const Content = styled.div`
   display: grid;
