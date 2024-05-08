@@ -6,7 +6,7 @@ const initialState = {
   original: null,
   trending: null,
 };
-
+ 
 const movieSlice = createSlice({
   name: "movie",
   initialState,

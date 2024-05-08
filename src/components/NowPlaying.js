@@ -2,24 +2,24 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const Recommends = () => {
+const NowPlaying = () => {
   const [movieList, setMovieList] = useState([]);
 
-  const recommendMovies = () => {
+  const nowPlayingMovies = () => {
     fetch(
-      "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&api_key=9c9507db04f409d6558ccc85828c568d"
+      "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=9c9507db04f409d6558ccc85828c568d"
     )
       .then((res) => res.json())
       .then((json) => setMovieList(json.results.slice(0, 4)));
   };
 
   useEffect(() => {
-    recommendMovies();
+    nowPlayingMovies();
   }, []);
 
   return (
     <Container>
-      <h4>Recommended for You</h4>
+      <h4>Now Playing</h4>
       <Content>
         {movieList.map((movie) => (
           <Wrap key={movie.id}>
@@ -111,4 +111,4 @@ const Overlay = styled.div`
   }
 `;
 
-export default Recommends;
+export default NowPlaying;
